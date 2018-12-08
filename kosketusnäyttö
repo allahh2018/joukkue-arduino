@@ -1,0 +1,42 @@
+#define _xp 0
+#define _yp 1
+#define _xm 2
+#define _ym 3
+
+void setup() { 
+  Serial.begin(9600); 
+}
+
+int readTouchX(void) {
+   pinMode(_yp, INPUT);
+   pinMode(_ym, INPUT);
+   digitalWrite(_yp, LOW);
+   digitalWrite(_ym, LOW);
+   
+   pinMode(_xp, OUTPUT);
+   digitalWrite(_xp, HIGH);
+   pinMode(_xm, OUTPUT);
+   digitalWrite(_xm, LOW);
+   
+   return (analogRead(_yp));
+}
+
+
+int readTouchY(void) {
+   pinMode(_xp, INPUT);
+   pinMode(_xm, INPUT);
+   digitalWrite(_xp, LOW);
+   digitalWrite(_xm, LOW);
+   
+   pinMode(_yp, OUTPUT);
+   digitalWrite(_yp, HIGH);
+   pinMode(_ym, OUTPUT);
+   digitalWrite(_ym, LOW);
+   
+   return (analogRead(_xm));
+}
+
+void loop() { 
+Serial.print("X: ");Serial.print(readTouchX());Serial.print("Y: ");Serial.println(readTouchY());
+delay(1000);
+} 
