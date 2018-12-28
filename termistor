@@ -1,3 +1,4 @@
+//NTC110 100kQ 5%
 int lämpötila = 0; 
 int Vo; 
 float R1 = 10000; 
