@@ -1,4 +1,3 @@
-//fritzing
 #include <EEPROM.h>
 template <class mita> void EEPROMw(int jossa, const mita& arvo){
     const byte* paalle = (const byte*)(const void*)&arvo;
